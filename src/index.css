@@ -1,13 +1,549 @@
-body {
+* { 
+	box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  --pri-color- : #1C174B;
+  --sec-color- : #FCAF26;
+  --acc-color-: #009d5e;
+  --pri-font-: 'Geologica', 'Montserrat', sans-serif;
 }
+html, body {
+	min-height: 100%;
+	background: #e2f4ff;
+	color: #2d2d2d;
+}
+	/* sets the body height of the browser, so that backgrounds and div heights work correctly. Color and background will almost certainly be altered; they are just placeholders */
+	
+body {
+	font-size: 1rem;
+  font-family: 'Geologica', 'Montserrat', sans-serif;
+	text-rendering: optimizeLegibility;
+}
+	/* sets the base font size for the document; turns on kerning pairs and ligatures */
+	
+body, ul, ol, dl {
+	margin: 0;
+}
+article, aside, audio, 
+footer, header, nav, section, video {
+	display: block; 
+	}
+	
+	/* ensures that older browsers will display HTML5 elements correctly */
+	
+h1 {
+	font-size: 1.5rem;
+}
+	/* begins to set up font sizes relative to base rem â€“ h1 has been used as an example */
+	
+p { 
+	-ms-word-break: break-all;
+	word-break: break-all;
+	word-break: break-word;
+	-moz-hyphens: auto;
+	-webkit-hyphens: auto;
+	-ms-hyphens: auto;
+	hyphens: auto;
+} 
+	/* sets hyphenation by default on paragraphs */
+	
+textarea { 
+	resize: vertical;
+}
+ /* changes textarea resizing from "both" (UA default) to vertical only */
+ 
+table { border-collapse: collapse; }
+td {
+	padding: .5rem;
+}
+	/* causes tables to actually look like tables */
+	
+img { 
+	border: none;
+	max-width: 100%;
+}
+	/* removes outlines from linked images (for older browsers and IE), sets up images for responsive design layout */
+	
+input[type="submit"]::-moz-focus-inner, 
+	input[type="button"]::-moz-focus-inner {
+		border : 0px;
+	}
+	/* removes the inner border effect from focused buttons for form elements in Firefox */
+	
+input[type="search"] { 
+	-webkit-appearance: textfield;
+} 
+input[type="submit"] { 
+	-webkit-appearance:none;
+}
+	/* removes the OS X appearance from HTML5 search inputs and submit buttons when viewed in Safari */
+	
+input:required:after {
+	color: #f00;
+	content: " *";
+}
+	/* sets up required form fields with the conventional following red asterix */
+input[type="email"]:invalid { 
+	background: #f00;
+}
+	/* causes a visual alert in browsers that do client-side checking of HTML5 email field â€“ this may already be the default in some browsers. */
+	
+.right { 
+	float: right;
+	margin-left: 2rem;
+	clear: right;
+}
+.left { 
+	float: left;
+	margin-right: 2rem;
+	clear: left;
+}
+	/* allows a quick shortcut for floating elements left and right while avoiding the â€œfloat quirkâ€ problem */
+	
+sub, sup { 
+	line-height: 0;
+}
+/* ///////////nav////////////// */
+.container-fluid {
+    width: 100%;
+}
+
+
+nav {
+  background-color: #fff;
+  padding:20px 0;
+}
+nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.dropbtn {
+  background-color: var(--sec-color-);
+  color: var();
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.offcanvas-content {
+    position: absolute;
+    right: 0;
+    min-width: 100%;
+    /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+    z-index: 1;
+  }
+
+.offcanvas-content a {
+    color: #1C174B;
+    padding: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+  }
+
+.offcanvas-content a:hover {
+  background-color: #e2f4ff;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #009d5e;
+  color:#fff;
+}
+
+.redalogo {
+  width: 120px;
+}
+
+
+/* header */
+header {
+  background: rgba(0, 33, 77, 0.91);
+  background-image: url('https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1596&q=80');
+  /* background: radial-gradient(circle, rgba(23,74,139,1) 0%, rgba(13,17,111,1) 100%); */
+  background-blend-mode: overlay;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 80px 0; 
+  margin-bottom: 40px;
+}
+  
+  header .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .header-event-name {
+    color: #fff;
+    font-size: 4rem;
+    text-align: center;
+    margin: 1.5rem 0;
+    font-weight: 800;
+  }
+  
+  .header-event-theme {
+    color: #fff;
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 1rem 0;
+  }
+  
+  .header-event-date,
+  .header-event-time,
+  .header-event-venue {
+    color: #fff;
+    font-size: 1rem;
+    text-align: center;
+  }
+  
+  .thinkmint-logos {
+    width: 300px;
+  }
+  
+  .header-buttons {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .header-button-getaccess {
+    width: 100%;
+    display: block;
+    margin: 5px;
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+    background-color: var(--acc-color-);
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 12px;
+    border-radius: 6px;
+  
+  }
+  
+  .header-button-register {
+    width: 100%;
+    display: block;
+    margin: 5px;
+    text-decoration: none;
+    text-align: center;
+    color: var(--pri-color-);
+    background-color: var(--sec-color-);
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 12px;
+    border-radius: 6px;
+  }
+
+  .videoWrapper {
+    text-align: center;
+  }
+  
+  @media screen and (max-width: 760px){
+  iframe {
+    width: 100%;
+  }  
+  }
+
+  /* theme */
+  .theme-group {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr) ;
+    gap: 10px;
+  }
+  
+  @media screen and (max-width: 780px) {
+    .theme-group {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr) ;
+      gap: 10px;
+    }
+  }
+  
+  .theme-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center ;
+  }
+  
+  .theme-item img {
+    width: 80px;
+  }
+  
+  .theme-item h3 {
+    font-size: 0.8rem;
+    text-transform: capitalize;
+    margin-top: 10px;
+    color: var(--pri-color-);
+    text-align: center;
+  }
+
+
+/* speakers */
+.speaker-group {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.speaker-link {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-radius: 6px;
+  height: 100%;
+}
+
+.speaker-link:hover {
+  background-color: #f5fbff;
+}
+
+.speaker-title {
+  color: var(--sec-color-);
+  margin-top: 10px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.speaker-position {
+  color:#4f4f4f;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.speaker-company {
+  color:#4f4f4f;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+@media screen and (max-width:760px) {
+  .speaker-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .speaker-title {
+    font-size: 1rem;
+  }
+
+  .speaker-position {
+    font-size: 0.6rem;
+
+  }
+}
+
+
+  /* topic list */
+  .section-title {
+    color: var(--pri-color-);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .mycontainer {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    margin-bottom: 40px;
+  }
+  .topic-list ul {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  
+  .topic-list ul li{
+    list-style-type: circle;
+    text-align: center;
+    margin-bottom: 10px;
+    background-color: #e2f4ff;
+    color: var(--pri-color-);
+    padding: 10px;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  .ticket-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  
+  @media screen and (max-width:780px) {
+    .ticket-group {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+  }
+  
+  .ticket-item {
+    background-color: #e2f4ff;
+    border-radius: 6px;
+    overflow: hidden;
+    
+  }
+  
+  .ticket-head {
+    background-color:var(--pri-color-);
+    padding: 12px;
+    margin-bottom: 10px;
+    height: 120px;
+    position: relative;
+  
+  }
+  
+  .ticket-head h3{
+    color: var(--sec-color-);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  .ticket-body {
+    padding: 12px;
+    position: relative;
+  }
+  
+  .regular::before {
+    content: 'Regular';
+    display: block;
+    font-size: 1.2rem;
+    color: #fff; 
+  }
+  
+  .standard::before {
+    content: 'Standard';
+    display: block;
+    font-size: 1.2rem;
+    color: #fff; 
+  }
+  .vip::before {
+    content: 'VIP';
+    display: block;
+    font-size: 1.2rem;
+    color: #fff; 
+  }
+  .six::before {
+    content: 'Table for 6';
+    display: block;
+    font-size: 1.2rem;
+    color: #fff; 
+  }
+  
+  .ticket-button {
+    display: block;
+    text-decoration: none;
+    background-color: #009d5e;
+    color: #ffff;
+    padding: 12px;
+    font-size: 0.8rem;
+    border-radius: 6px;
+    text-align: center;
+  }
+  
+  .submit-button {
+    display: blockÂ§;
+    background-color: #FCAF26;
+    color: #1C174B;
+    font-weight: bold;
+    max-width: fit-content;
+    padding: 8px 24px;
+  }
+  
+  :is(.firstname, .lastname, .email, .phone, .company, .position) {
+    margin-bottom: 10px;
+    padding: 12px;
+  }
+  
+  .success-message {
+    background-color: rgb(3, 179, 117);
+    padding: 10px;
+    color: #fff;
+    width:max-content;
+    }
+  
+  .error-message {
+    background-color: crimson;
+    padding: 10px;
+    color: #fff;
+    width:max-content;
+    }
+  
+  #form-response {
+    text-align: center;
+    display: block;
+    margin: 10px auto;    
+    }
+  
+    
+  /* on biggerscreen */
+  @media screen and (min-width: 760px) {
+    :is(.name-group, .contact-group, .company-group) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+  }
+  
+  footer {
+    background-color: var(--pri-color-);
+    padding: 100px 0;
+  }
+  
+  .footer-title {
+    color: #fff;
+    font-size: 1rem;
+    text-align: center;
+  }
+  
+  .footer-contact {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 30px;
+  }
+  
+  :is(.footer-phone, .footer-email){
+    font-size: 1.5rem;
+    color:#FCAF26;
+    font-weight: 600;
+    margin: 0;
+  }
+  
+  
+  .footer-base {
+    color: #7dc4fd;
+    text-align: center;
+  }
