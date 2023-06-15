@@ -22,7 +22,7 @@ const SubthemeComp = () => {
                 { newsubtheme } 
             </div>
         </div>
-    </section>
+        </section>
      );
 }
  

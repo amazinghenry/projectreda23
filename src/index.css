@@ -82,12 +82,12 @@ input[type="submit"] {
 	/* removes the OS X appearance from HTML5 search inputs and submit buttons when viewed in Safari */
 	
 input:required:after {
-	color: #f00;
+	color: rgb(255, 255, 255);
 	content: " *";
 }
 	/* sets up required form fields with the conventional following red asterix */
 input[type="email"]:invalid { 
-	background: #f00;
+	background: rgb(254, 254, 254);
 }
 	/* causes a visual alert in browsers that do client-side checking of HTML5 email field â€“ this may already be the default in some browsers. */
 	
@@ -330,12 +330,15 @@ header {
   color:#4f4f4f;
   font-size: 0.8rem;
   text-align: center;
+  margin: 0;
 }
 
 .speaker-company {
-  color:#4f4f4f;
+  color:#8b8b8b;
   font-size: 0.8rem;
   text-align: center;
+  margin: 0;
+  
 }
 
 @media screen and (max-width:760px) {
@@ -435,6 +438,7 @@ header {
   .ticket-body {
     padding: 12px;
     position: relative;
+
   }
   
   .regular::before {

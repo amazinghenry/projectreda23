@@ -1,12 +1,12 @@
 import '../index.css'
-import SpeakerItem from './speaker-item'
+import SpeakerItem from './Speaker-item'
 import Data from '../speaker-data.js'
 
 
 const SpeakerComponent = () => {
 
     const speakers = Data.map((data)=>{
-        console.log(data)
+        // console.log(data)
         return <
           SpeakerItem
           key = { data.id }
