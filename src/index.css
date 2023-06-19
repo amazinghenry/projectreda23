@@ -384,7 +384,7 @@ header {
     flex-wrap: wrap;
   }
   
-  
+
   .topic-list ul li{
     list-style-type: circle;
     text-align: center;
@@ -479,12 +479,17 @@ header {
   }
   
   .submit-button {
-    display: blockÂ§;
+    display: block;
     background-color: #FCAF26;
     color: #1C174B;
     font-weight: bold;
     max-width: fit-content;
     padding: 8px 24px;
+  }
+
+  .submit-button:hover {
+    background-color: #009d5e;
+    color: #fff;
   }
   
   :is(.firstname, .lastname, .email, .phone, .company, .position) {
@@ -493,10 +498,15 @@ header {
   }
   
   .success-message {
-    background-color: rgb(3, 179, 117);
+    /* display: none; */
+    background-color: rgb(0, 160, 104);
+    margin-top: 20px;
+    border-radius: 6px;
     padding: 10px;
     color: #fff;
     width:max-content;
+    text-align: center;
+    font-size: 0.8rem;
     }
   
   .error-message {

@@ -19,10 +19,10 @@ const SpeakerComponent = () => {
     })
 
     return (
-        <section id="speakers" class="container-fluid">
-        <div class="container mycontainer">
-          <h2 class="section-title">reda23 speakers</h2>
-          <div class="speaker-group">
+        <section id="speakers" className = "container-fluid">
+        <div className="container mycontainer">
+          <h2 className="section-title">reda23 speakers</h2>
+          <div className="speaker-group">
            { speakers }
           </div>
         </div>

@@ -6,10 +6,10 @@ import TopicItem from './Topic-item'
 function TopicComponent() {
 
   const topics = Data.map((data)=> {
-  console.log(data)
     return <
       TopicItem
       topic = { data.topic }
+      key = { data.id }
       />
     })
 

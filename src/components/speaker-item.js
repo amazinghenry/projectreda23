@@ -3,7 +3,7 @@ import '../index.css'
 const SpeakerItem = (props) => {
 
     return ( 
-        <div class="speaker-item">
+        <div className="speaker-item">
             <a
             href="/"
             className="speaker-link">
